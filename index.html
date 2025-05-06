@@ -15,8 +15,11 @@
             font-family: sans-serif;
             overflow: hidden;
             height: 100vh;
-            padding: 2rem;
+            /* padding: 2rem; */
             background-color: lightblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         } 
 
         h1 {
@@ -48,11 +51,30 @@
             object-fit: cover;
             border-radius: 1rem;
         }
+        @media only screen and (max-width: 1000px){
+            h1 {
+                font-size: 1.5rem;
+                margin-bottom: 0.5rem;
+            }
+            h2 {
+                font-size: 1rem;
+                margin-bottom: 1rem;
+            }
+            .btn {
+                height: 150px;
+            }
+            .btn-container {
+                gap: 1rem;
+                margin-bottom: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <h1>Teddy Bear Day</h1>
-    <h2>Choose a tune for your Teddy's ride!</h2>
+    <div>
+
+        <h1>Teddy Bear Day</h1>
+        <h2>Choose a tune for your Teddy's ride!</h2>
     <div class="btn-container">
         <button id="button1" class="btn"><img class="img" src="images/teddy-picnic.png"></button>
         <button id="button2" class="btn"><img class="img" src="images/twinkle.png"></button>
@@ -61,8 +83,7 @@
     <div class="btn-container">
         <button id="button4" class="btn"><img class="img" src="images/rainbow.png" alt=""></button>
         <button id="button5" class="btn"><img class="img" src="images/macdonald.png" alt=""></button>
-        <button id="button6" class="btn">Hey Diddle Diddle</button>
-        <img src="" alt="">
+        <button id="button6" class="btn"><img class="img" src="images/macdonald.png" alt=""></button>
     </div>
     <audio id="audio1" src="audio/audio1.mp3"></audio>
     <audio id="audio2" src="audio/audio1.mp3"></audio>
@@ -70,7 +91,8 @@
     <audio id="audio4" src="audio/audio1.mp3"></audio>
     <audio id="audio5" src="audio/audio1.mp3"></audio>
     <audio id="audio6" src="audio/audio1.mp3"></audio>
- 
+</div>
+    
     <script>
         const audioElements = [
     document.getElementById('audio1'),
