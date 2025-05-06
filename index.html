@@ -5,17 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teddy Bear Day Tunes</title>
     <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            text-align: center;
+            font-family: sans-serif;
+            overflow: hidden;
+            height: 100vh;
+            padding: 2rem;
+            background-color: lightblue;
+        } 
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
         .btn-container {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: space-evenly;
+            justify-content: center;
             align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
         }
         .btn {
             width: 30%;
-            padding: 2rem;
-            background-color: pink;
             border-radius: 2rem;
+            border: 1rem red solid;
+            height: 35vh;
+        }
+
+        .img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 1rem;
         }
     </style>
 </head>
@@ -23,12 +54,72 @@
     <h1>Teddy Bear Day</h1>
     <h2>Choose a tune for your Teddy's ride!</h2>
     <div class="btn-container">
-        <button class="btn">1</button>
-        <button class="btn">2</button>
-        <button class="btn">3</button>
-        <button class="btn">4</button>
-        <button class="btn">5</button>
-        <button class="btn">6</button>
+        <button id="button1" class="btn"><img class="img" src="images/teddy-picnic.png"></button>
+        <button id="button2" class="btn"><img class="img" src="images/twinkle.png"></button>
+        <button id="button3" class="btn"><img class="img" src="images/row.png" alt=""></button>
     </div>
+    <div class="btn-container">
+        <button id="button4" class="btn"><img class="img" src="images/rainbow.png" alt=""></button>
+        <button id="button5" class="btn"><img class="img" src="images/macdonald.png" alt=""></button>
+        <button id="button6" class="btn">Hey Diddle Diddle</button>
+        <img src="" alt="">
+    </div>
+    <audio id="audio1" src="audio/audio1.mp3"></audio>
+    <audio id="audio2" src="audio/audio1.mp3"></audio>
+    <audio id="audio3" src="audio/audio1.mp3"></audio>
+    <audio id="audio4" src="audio/audio1.mp3"></audio>
+    <audio id="audio5" src="audio/audio1.mp3"></audio>
+    <audio id="audio6" src="audio/audio1.mp3"></audio>
+ 
+    <script>
+        const audioElements = [
+    document.getElementById('audio1'),
+    document.getElementById('audio2'),
+    document.getElementById('audio3'),
+    document.getElementById('audio4'),
+    document.getElementById('audio5'),
+    document.getElementById('audio6')
+  ];
+
+  let currentlyPlayingAudio = null;
+
+  function playAudio(audioId) {
+    const audioElement = document.getElementById(audioId);
+
+    // If there's an audio currently playing and it's not the one we want to play now, pause it.
+    if (currentlyPlayingAudio && currentlyPlayingAudio !== audioElement) {
+      currentlyPlayingAudio.pause();
+      currentlyPlayingAudio.currentTime = 0; // Optionally reset the playback to the beginning
+    }
+
+    audioElement.play();
+    currentlyPlayingAudio = audioElement;
+  }
+
+  document.getElementById('button1').addEventListener('click', function() {
+    playAudio('audio1');
+  });
+
+  document.getElementById('button2').addEventListener('click', function() {
+    playAudio('audio2');
+  });
+
+  document.getElementById('button3').addEventListener('click', function() {
+    playAudio('audio3');
+  });
+
+  document.getElementById('button4').addEventListener('click', function() {
+    playAudio('audio4');
+  });
+
+  document.getElementById('button5').addEventListener('click', function() {
+    playAudio('audio5');
+  });
+
+  document.getElementById('button6').addEventListener('click', function() {
+    playAudio('audio6');
+  });
+
+    </script>
 </body>
 </html>
