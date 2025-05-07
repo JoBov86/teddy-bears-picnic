@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teddy Bear Day Tunes</title>
+    <title>Teddy Bear Ferris Wheel Tunes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <style>
         * {
             padding: 0;
@@ -21,15 +24,26 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            background-image: url(images/union-jack-backdrop.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
         } 
+        .lato-bold {
+            font-family: "Lato", sans-serif;
+            font-weight: 900;
+            font-style: normal;
+        }
 
         h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
+            font-weight: 900;
         }
         h2 {
             font-size: 2rem;
             margin-bottom: 2rem;
+            font-weight: 900;
         }
 
         .btn-container {
@@ -42,7 +56,9 @@
         .btn {
             width: 30%;
             border-radius: 2rem;
-            border: 1rem red solid;
+            /* border: .5rem #eeeeee solid; */
+            outline: none;
+            border: none;
             height: 35vh;
         }
 
@@ -77,8 +93,8 @@
 <body>
     <div>
 
-        <h1>Teddy Bear Day</h1>
-        <h2>Choose a tune for your Teddy's ride!</h2>
+        <h1 class="lato-bold">Teddy Ferris Wheel</h1>
+        <h2 class="lato-bold">Choose a tune for your Teddy's ride!</h2>
     <div class="btn-container">
         <button id="button1" class="btn"><img class="img" src="images/teddy-picnic.png"></button>
         <button id="button2" class="btn"><img class="img" src="images/twinkle.png"></button>
@@ -87,14 +103,14 @@
     <div class="btn-container">
         <button id="button4" class="btn"><img class="img" src="images/rainbow.png" alt=""></button>
         <button id="button5" class="btn"><img class="img" src="images/macdonald.png" alt=""></button>
-        <button id="button6" class="btn"><img class="img" src="images/macdonald.png" alt=""></button>
+        <button id="button6" class="btn"><img class="img" src="images/frere.png" alt=""></button>
     </div>
-    <audio id="audio1" src="audio/audio1.mp3"></audio>
-    <audio id="audio2" src="audio/audio1.mp3"></audio>
-    <audio id="audio3" src="audio/audio1.mp3"></audio>
-    <audio id="audio4" src="audio/audio1.mp3"></audio>
-    <audio id="audio5" src="audio/audio1.mp3"></audio>
-    <audio id="audio6" src="audio/audio1.mp3"></audio>
+    <audio id="audio1" src="audio/teddy-bears-picnic.mp3"></audio>
+    <audio id="audio2" src="audio/twinkle-twinkle.mp3"></audio>
+    <audio id="audio3" src="audio/row-your-boat.mp3"></audio>
+    <audio id="audio4" src="audio/rainbow.mp3"></audio>
+    <audio id="audio5" src="audio/old-macdonald.mp3"></audio>
+    <audio id="audio6" src="audio/frere-jacques.mp3"></audio>
 </div>
     
     <script>
